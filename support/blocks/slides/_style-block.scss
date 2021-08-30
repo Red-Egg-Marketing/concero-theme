@@ -1,0 +1,291 @@
+.slides {
+	width: 100%;
+	overflow: hidden;
+}
+
+.slides .block-wrapper {
+	background: #FBF0E2;
+}
+
+.slides-wrap {
+	position: relative;
+}
+
+.slide-cont {
+	width: 100%;
+}
+
+
+.slides .slide:first-of-type {
+	position: relative;
+	opacity: 1;
+	z-index: 2;
+}
+
+.slides .slide:first-of-type .img-wrap,
+.slides .slide:first-of-type .text-wrap {
+	opacity: 1;
+}
+
+.slide .fade-wrap {
+	width: 100%;
+}
+
+.slide {
+	width: 100%;
+	max-width: 100%;
+	min-height: 100vh;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	position: absolute;
+	top:  0;
+	left:  0;
+	@media screen and (min-width: $small-width) {
+		align-items: stretch;
+	}
+}
+
+.slide.active-slide {
+	z-index: 100;
+	opacity: 1;
+}
+
+.slide-wrap {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: stretch;
+}
+
+.slide .img-wrap {
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: stretch;
+	width: 100%;
+	@media screen and (min-width: $small-width) {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.slides .slide:first-of-type .img-wrap .animate-fill {
+	width: 0;
+}
+
+.slide .img-wrap .animate-fill {
+	width: 36%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	right: 0;
+	background: #FBF0E2;
+	display: none;
+	@media screen and (min-width: $med-width) {
+		display: block;
+		width: 36%;
+	}
+	@media screen and (min-width: $small-width) and (max-width: $med-width - 1px) {
+		width: 50%;
+		display: block;
+	}
+}
+
+.slide .img-wrap img {
+	display: block;
+	width: calc(100% + 25px);
+	max-width: calc(100% + 25px);
+	height: 100%;
+	object-fit: cover;
+	@media screen and (min-width: $small-width) {
+		width: 100%;
+		max-width: 100%;
+	}
+}
+
+.slide .text-wrap {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	@media screen and (min-width: $med-width) {
+		width: 36%;
+		margin-left: 64%;
+	}
+	@media screen and (min-width: $small-width) and (max-width: $med-width - 1px) {
+		width: 50%;
+		margin-left: 50%;
+	}
+}
+
+.slide .text-wrap .inner-wrap {
+	background: white;
+	width: calc(100% - 80px);
+	opacity: 0;
+	padding-top: 30px;
+	padding-bottom: 32px;
+	padding-left: 30px;
+	padding-right: 30px;
+	margin-top: -75px;
+	@media screen and (min-width: $med-width) {
+		padding-top: 70px;
+		padding-bottom: 70px;
+		padding-left: #{'min(10%, 70px)'};	
+		padding-right: #{'min(10%, 70px)'};
+		margin-left: -66.5%;
+		margin-top: 0;
+		width: 110%;
+	}
+
+	@media screen and (min-width: $small-width) and (max-width: $med-width - 1px) {
+		padding-top: 40px;
+		padding-bottom: 40px;
+		padding-left: #{'min(10%, 70px)'};	
+		padding-right: #{'min(10%, 70px)'};
+		margin-left: -18.5%;
+		margin-top: 0;
+		width: 110%;
+	}
+}
+
+
+.slide .inner-wrap > ul {
+	margin: 0;
+	list-style-type: none;
+}
+
+.slide .inner-wrap li:before {
+	content: "\2022";
+	color: $bullet-color;
+	display: inline-block;
+	width: 0.85em;
+	font-size: 22px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	@media screen and (min-width: $small-width) {
+		width: 1em;
+		font-size: 31px;
+	}
+}
+
+
+.slide .text-wrap p,
+.slide .text-wrap ul {
+	font-family: $font-head-alt;
+	font-weight: normal;
+	color: #191919;
+	transition-property: opacity;
+	transition-duration: 2.05s;
+	font-size: 16px;
+	line-height: 25px;
+	@media screen and (min-width: $small-width) {
+		font-size: 24px;
+		line-height: 36px;
+	}
+}
+
+.slide-title {
+	font-family: $font-head;
+	text-transform: uppercase;
+	color:  $head-color;
+	margin-top: 0;
+	padding-top: 42px;
+	background-image: linear-gradient(to right, $border-color, $border-color);
+	background-position: top left;		
+	background-size: 40px 4px;
+	padding-top: 25px;
+	font-size: 22px;
+	letter-spacing: 0.25px;
+	background-repeat: no-repeat;
+	@media screen and (min-width: $small-width) {
+		font-size: 35px;
+		line-height: 50px;
+		letter-spacing: 1.75px;
+		padding-top: 42px;
+		background-image: linear-gradient(to right, $border-color, $border-color);
+		background-position: top left;		
+		background-size: 50px 5px;
+		background-repeat: no-repeat;
+	}
+}
+
+.slides .slide ul.slides-nav-list {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	justify-content: center;
+	margin-top: 30px;
+	@media screen and (min-width: $small-width) {
+		margin-top: 75px;
+		justify-content: flex-end;
+	}
+}
+
+.slides ul.slides-nav-list .slide-item {
+	line-height: 1;
+}
+
+.slides ul.slides-nav-list li:before {
+	display: none;
+}
+
+.slide .text-wrap ul {
+	padding-left: 0;
+}
+
+.slide .text-wrap ul li {
+	position: relative;
+	padding-left: 20px;
+	@media screen and (min-width: $small-width) {
+		padding-left: 30px;
+	}
+}
+
+.slides ul.slides-nav-list li {
+	font-size: 0;
+	margin-left: 15px;
+	padding-left: 0;
+	@media screen and (min-width: $small-width) {
+		margin-left: 25px;
+	}
+}
+
+.slides ul.slides-nav-list li:first-of-type {
+	margin-left: 0;
+	@media screen and (min-width: $small-width) {
+		margin-left: 25px;
+	}
+}
+
+.slides ul.slides-nav-list li a {
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	border-radius: 10px;
+	border: 1px solid #DDA360;
+	transition-duration: 0.25s;
+	transition-property: background;
+	@media screen and (min-width: $small-width) {
+		width: 15px;
+		height: 15px;
+		border-radius: 15px;
+		border: 2px solid #DDA360;
+	}
+}
+
+.slides ul.slides-nav-list li a.active {
+	background: #DDA360;
+}

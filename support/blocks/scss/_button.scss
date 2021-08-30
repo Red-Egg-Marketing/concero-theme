@@ -1,0 +1,42 @@
+.wp-block-button__link {
+	background: $head-color;
+	color: white;
+	font-family: $font-body;
+	text-transform: uppercase;
+	border: none;
+	border-radius: 0;
+	margin-bottom: 0;
+	padding-bottom: 0;
+	transition-duration: 0.3s;
+	transition-property: color, background;
+	font-size: 11pt;
+	padding-top: 18px;
+	padding-bottom: 8px;
+	letter-spacing: 0.55pt;
+	line-height: 1.15;
+	min-height: 35px;
+	@media screen and (min-width: $small-width) {
+		font-size: 15px;
+		line-height: 1.15;
+		letter-spacing: 1.25px;
+		padding-top: 18px;
+		padding-bottom: 8px;
+		padding-left: 25px;
+		padding-right: 25px;
+		cursor: pointer;
+	}
+}
+
+.wp-block-button__link:hover {
+	background: white;
+	color: $head-color;
+}
+
+.is-style-button-download .wp-block-button__link {
+	text-align: center;
+	background: $head-color url(img/download.svg) no-repeat 95% center / 15px;
+	padding-right: 35px;
+}
+.is-style-button-download .wp-block-button__link:hover {
+	background: white url(img/download.svg) no-repeat 95% center / 15px;
+}

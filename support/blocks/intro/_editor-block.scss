@@ -1,0 +1,34 @@
+.wp-block.intro-block {
+	width: 100%;
+	max-width: 100%;
+	height: 100vh;
+	min-height: 600px;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+}
+.wp-block.intro-block .block-wrapper {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+}
+.intro-block .intro-wrap {
+	max-width: 830px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	color: white;
+}
+.intro-block .image-wrap {
+	max-width: 425px;
+	margin: 0 auto;
+}
+.intro-block .image-wrap img {
+	display: block;
+	height: auto;
+	width: 100%;
+}

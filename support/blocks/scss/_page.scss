@@ -1,0 +1,6 @@
+.entry-content {
+	padding-top: 65px;
+	@media screen and (min-width: $small-width) {
+		padding-top: 0;
+	}
+}

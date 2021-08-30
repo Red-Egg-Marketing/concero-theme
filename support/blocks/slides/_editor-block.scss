@@ -1,0 +1,106 @@
+.wp-block.slides {
+	width: 100%;
+	max-width: 100%;
+}
+.wp-block.slides .wp-block.slide {
+	display: none;
+}
+.wp-block.slides .wp-block.slide:first-of-type {
+	display: block;
+}
+.wp-block.slides.is-selected .wp-block.slide,
+.wp-block.slides.has-child-selected .wp-block.slide {
+	display: block;
+}
+.wp-block.slide {
+	width: 100%;
+	max-width: 100%;
+	height: 100vh;
+}
+
+.wp-block.slide .slide-cont {
+	width: 100%;
+	height: 100%;
+}
+
+.wp-block.slide .fade-wrap {
+	height: 100%;
+}
+
+.wp-block.slide .img-wrap .app-media {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.slide-wrap {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: stretch;
+	background: #FBF0E2;
+}
+.editor-styles-wrapper .slide-title {
+	font-family: $font-head;
+	text-transform: uppercase;
+	color:  $head-color;
+	margin-top: 0;
+	transition-property: background, opacity;
+	transition-duration: 1.45s, 1.65s;
+	@media screen and (min-width: $small-width) {
+		font-size: 35px;
+		line-height: 50px;
+		letter-spacing: 1.75px;
+		padding-top: 42px;
+		background-image: linear-gradient(to right, $border-color, $border-color);
+		background-position: top left;		
+		background-size: 50px 5px;
+		background-repeat: no-repeat;
+	}
+}
+
+.editor-styles-wrapper .slide .text-wrap ul {
+	margin: 0;
+	list-style-type: none;
+}
+
+.editor-styles-wrapper .slide .text-wrap p,
+.editor-styles-wrapper .slide .text-wrap ul {
+	font-family: $font-head-alt;
+	color: #191919;
+	transition-property: opacity;
+	transition-duration: 2.05s;
+	@media screen and (min-width: $small-width) {
+		font-size: 24px;
+		line-height: 36px;
+	}
+}
+
+.image-controls {
+	margin-bottom: 15px;
+}
+.wp-block.slide .img-wrap {
+	width: 64%;
+}
+.wp-block.slide .text-wrap {
+	width: 36%;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+}
+.wp-block.slide .text-wrap .inner-wrap {
+	background: white;
+	margin-left: -66.5%;
+	width: 110%;
+	@media screen and (min-width: $small-width) {
+		padding-top: 70px;
+		padding-bottom: 70px;
+		padding-left: #{'min(10%, 70px)'};	
+		padding-right: #{'min(10%, 70px)'};
+	}
+}

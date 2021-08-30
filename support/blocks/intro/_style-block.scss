@@ -1,0 +1,135 @@
+.intro-block {
+	width: 100%;
+	max-width: 100%;
+	min-height: 1080px;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	position: relative;
+
+}
+
+.intro-block .intro-wrap {
+	padding-left: 45px;
+	padding-right: 45px;
+	@media screen and (min-width: $small-width) {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+.intro-block:after {
+	content: "";
+	background: url("img/down-arrow.svg") no-repeat center center / 35px;
+	width: 35px;
+	height: 35px;
+	position: absolute;
+	bottom: 1.5%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	animation: bounce 2.5s infinite;
+	opacity: 0;
+	transition-duration: .3s;
+	transition-property: opacity;
+}
+
+.intro-block.active:after {
+	opacity: 1;
+}
+
+.intro-block .block-heading {
+	font-family: $font-head-alt;
+	color: $head-alt-color;
+	font-weight: 700;
+	font-size: 21px;
+	margin-top: 55px;
+	@media screen and (min-width: $small-width) {
+		font-size: 25px;
+		line-height: 42px;
+		margin-top: 52px;
+		margin-bottom: 28px;
+		opacity: 0;
+	}
+}
+
+.intro-block .block-body {
+	@media screen and (min-width: $small-width) {
+		opacity: 0;
+	}
+}
+
+.intro-block .block-body p {
+	font-family: $font-body;
+	color: white;
+	font-size: 15px;
+	line-height: 24px;
+	@media screen and (min-width: $small-width) {
+		font-size: 19px;
+		line-height: 30px;
+		letter-spacing: 0.19px;
+	}
+}
+
+.intro-block .block-wrapper {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	padding-top: 65px;
+	@media screen and (min-width: $small-width) {
+		padding-top: 0;
+	}
+}
+
+.intro-block[data-curtain="true"] .block-wrapper {
+	position: fixed;
+	top: 0;
+	left:  0;
+}
+
+.intro-block .intro-wrap {
+	max-width: 830px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	color: white;
+}
+
+.intro-block .image-wrap {
+	max-width: 425px;
+	margin: 0 auto;
+	opacity: 0;
+	background-image: linear-gradient(to right, $head-alt-color, $head-alt-color);
+	background-size: 0px 5px;
+	padding-bottom: 55px;
+	background-position: bottom center;
+	background-repeat: no-repeat;
+	@media screen and (min-width: $small-width) {
+		padding-bottom: 60px;
+		background-position: bottom center;		
+		background-size: 0px 5px;
+		background-repeat: no-repeat;
+	}
+}
+
+.intro-block .image-wrap img {
+	display: block;
+	height: auto;
+	width: 100%;
+	max-width: 240px;
+	margin: 0 auto;
+	@media screen and (min-width: $small-width) {
+		max-width: 100%;
+	}
+}
+
+@keyframes bounce {
+   0%, 20%, 50%, 80%, 100% { bottom: 1.5%;} 
+   40% { bottom: calc(1.5% + 15px);  } 
+   60% { bottom: calc(1.5% + 5px);  } 
+} 
+

@@ -1,0 +1,112 @@
+.wp-block-concero-custom-row {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	width: 100%;
+	margin-bottom: 30px;
+	 @media screen and (min-width: $small-width) {
+	 	margin-bottom: 60px;
+	 }
+}
+
+.wp-block-concero-custom-row.toggle-row .wp-block-concero-custom-blocks-wrap:nth-of-type(odd) {
+	order: 2;
+	@media screen and (min-width: $small-width) {
+		order: 1;
+	}
+}
+
+
+.wp-block-concero-custom-row.toggle-row .wp-block-concero-custom-blocks-wrap:nth-of-type(even) {
+	order: 1;
+	@media screen and (min-width: $small-width) {
+		order: 2
+	}
+}
+
+.wp-block-concero-custom-row:last-child {
+	 @media screen and (min-width: $small-width) {
+	 	margin-bottom: 0;
+	 }
+}
+.wp-block-concero-custom-row.no-margin {
+	margin-bottom: 0;
+	@media screen and (min-width: $small-width) {
+		margin-bottom: 0;
+	}
+}
+.wp-block-concero-custom-row h3 {
+	color: $head-color;
+	font-family: $font-head-alt;
+	margin-bottom: 0;
+	margin-top: 0;
+	font-size: 21px;
+	letter-spacing: 0.21px;
+	@media screen and (min-width: $small-width) {
+		font-size: 25px;
+		line-height: 40px;
+	}
+}
+
+.wp-block-concero-custom-row .has-text-align-right {
+	@media screen and (max-width: $med-width - 1px) {
+		text-align: center;
+	}
+}
+
+.wp-block-concero-custom-row .is-content-justification-right {
+	@media screen and (max-width: $med-width - 1px) {
+		justify-content: center;
+	}
+}
+
+.wp-block-concero-custom-row p {
+	color: white;
+	font-family: $font-body;
+	font-weight: 400;
+	font-size: 15px;
+	line-height: 24px;
+	letter-spacing: 0.19px;
+	@media screen and (min-width: $small-width) {
+		font-size: 19px;
+		line-height: 30px;
+		letter-spacing: 0.19px;
+	}
+}
+
+.wp-block-concero-custom-row p:first-of-type {
+	margin-top: 0;
+}
+
+.wp-block-concero-custom-row p em {
+	color: $head-color;
+	font-family: $font-body-light;
+}
+.wp-block-concero-custom-row p strong {
+	font-family: $font-head-black;
+}
+
+.wp-block-concero-custom-row .wp-block-concero-custom-blocks-wrap {
+	width: 100%;
+	text-align: center;
+	@media screen and (min-width: $med-width) {
+		width: 50%;
+		text-align: left;
+	}
+}
+
+@for $i from 0 through 100 {
+
+    .row.left-col-#{$i} .wp-block-concero-custom-blocks-wrap:nth-of-type(odd) {
+    	@media screen and (min-width: $med-width) {
+        	width: percentage(($i/100));
+    	}
+    }
+
+    .row.right-col-#{$i} .wp-block-concero-custom-blocks-wrap:nth-of-type(even) {
+    	@media screen and (min-width: $med-width) {
+        	width: percentage(($i/100));
+    	}
+    }
+
+}

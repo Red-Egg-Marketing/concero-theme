@@ -1,0 +1,30 @@
+/*!
+Theme Name: Concero Theme
+Author: Jacob Lang
+Author URI: https://redeggmarketing.com/
+Description: A custom theme for Concero
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+GitHub Plugin URI: https://github.com/Red-Egg-Marketing/concero
+*/
+@import "~bootstrap-icons/font/bootstrap-icons";
+@import "./scss/fonts";
+@import "./scss/variables";
+@import "./scss/base";
+@import "./scss/page";
+@import "./scss/form";
+@import "./scss/button";
+@import "./scss/navigation";
+
+/*--------------------------------------------------------------
+ Custom Blocks
+--------------------------------------------------------------*/
+@import "./slides/style-block";
+@import "./intro/style-block";
+@import "./row/style-block";
+
+/*--------------------------------------------------------------
+ ACF Custom Blocks
+--------------------------------------------------------------*/
+@import "../acf-blocks/templates/contact-map/style-block";

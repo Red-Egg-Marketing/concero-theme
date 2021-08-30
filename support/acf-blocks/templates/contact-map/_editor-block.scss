@@ -1,0 +1,71 @@
+.acf-map {
+    width: 100%;
+    height: 900px;
+    margin: 20px 0;
+    position: relative;
+    background: white;
+}
+
+.acf-map:before {
+   content: "Map will display here";
+   position: absolute;
+   top: 50%;
+   left: 0;
+   width: 100%;
+   font-size: 25px;
+   text-align: center;
+   transform: translateY(-50%);
+   color: black;
+}
+
+div[data-type="acf/contact-map"] {
+   width: 100%;
+   max-width: 100%;
+}
+
+// Fixes potential theme css conflict.
+.acf-map img {
+   max-width: inherit !important;
+}
+
+
+.contact-map__inner {
+   max-width: 1620px;
+   margin: 0 auto;
+   width: 100%;
+}
+
+.contact-map {
+   width: 100%;
+   position: relative;
+   background: $bg-blue;
+   @media screen and (min-width: $small-width) {
+      padding-top: 90px;
+      padding-bottom: 90px;
+      padding-left: #{'min(10%, 130px)'}; 
+      padding-right: #{'min(10%, 130px)'};
+   }
+}
+
+.contact-map__content {
+   width: 100%;
+   display: flex;
+   flex-wrap: wrap;
+   align-items: flex-start;
+}
+
+.contact-map__content .column {
+   width: 100%;
+   @media screen and (min-width: $small-width) {
+      width: 50%;
+      padding-left: #{'min(10%, 30px)'};  
+      padding-right: #{'min(10%, 30px)'};
+   }
+}
+
+.contact-map div.gform_wrapper {
+   @media screen and (min-width: $small-width) {
+      margin-bottom: 75px;
+      margin-top: 40px;
+   }
+}
