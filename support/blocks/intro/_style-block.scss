@@ -46,7 +46,7 @@
 	color: $head-alt-color;
 	font-weight: 700;
 	font-size: 21px;
-	margin-top: 55px;
+	margin-top: 35px;
 	opacity: 0;
 	@media screen and (min-width: $small-width) {
 		font-size: 25px;
@@ -109,7 +109,7 @@
 	opacity: 0;
 	background-image: linear-gradient(to right, $head-alt-color, $head-alt-color);
 	background-size: 0px 5px;
-	padding-bottom: 55px;
+	padding-bottom: 35px;
 	background-position: bottom center;
 	background-repeat: no-repeat;
 	@media screen and (min-width: $small-width) {
