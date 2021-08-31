@@ -6,7 +6,21 @@
  */
 ( function() {
 	const siteNavigation = document.getElementById( 'site-navigation' );
+	const siteHeader = document.getElementById( 'masthead' );
+	var scrollY = window.scrollY;
 
+	if (siteHeader) {
+
+		window.addEventListener('scroll', function(e){
+			scrollY = window.scrollY;
+
+			if (scrollY > 0) {
+				siteHeader.classList.add('activate');
+			} else {
+				siteHeader.classList.remove('activate');
+			}
+		});
+	}
 	// Return early if the navigation don't exist.
 	if ( ! siteNavigation ) {
 		return;

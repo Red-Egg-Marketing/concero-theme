@@ -9,9 +9,15 @@
 	padding-left: 40px;
 	padding-right: 40px;
 	box-shadow: 0px 6px 10px rgba(0, 0, 0, .16);
+	transform: translateY(-100%);
+	transition-property: transform;
+	transition-duration: 0.35s;
 	@media screen and (min-width: $small-width) {
 		display: none;
 	}
+}
+.site-header.activate {
+	transform: translateY(0);
 }
 
 .logo-cont .nav-logo img {
