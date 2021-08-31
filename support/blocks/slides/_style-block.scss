@@ -40,6 +40,8 @@
 	position: absolute;
 	top:  0;
 	left:  0;
+	transition-duration: 0.2s;
+	transition-property: padding;
 	@media screen and (min-width: $small-width) {
 		align-items: stretch;
 		padding-top: 0;
