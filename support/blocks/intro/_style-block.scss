@@ -1,13 +1,15 @@
 .intro-block {
 	width: 100%;
 	max-width: 100%;
-	min-height: 1080px;
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: center;
 	height: 100vh;
 	position: relative;
+	@media screen and (min-width: $small-width) {
+		min-height: 1080px;
+	}
 
 }
 
@@ -77,7 +79,7 @@
 	flex-wrap: wrap;
 	align-items: flex-start;
 	justify-content: center;
-	padding-top: 115px;
+	padding-top: 15px;
 	@media screen and (min-width: $small-width) {
 		padding-top: 0;
 		align-items: center;
