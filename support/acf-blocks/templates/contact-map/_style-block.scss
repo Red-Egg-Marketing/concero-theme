@@ -96,13 +96,15 @@
 	padding-left: 0;
 	padding-right: 0;
 	padding-top: 0;
-	height: auto;
+	height: 100%;
 	@media screen and (min-width: $small-width) and (max-width: $med-width) {
 		padding-left: #{'min(2.5%, 30px)'};	
 		padding-right: #{'min(2.5%, 30px)'};
+		height: initial;
 	}
 	@media screen and (min-width: $med-width + 1px) {
 		padding-left: #{'min(10%, 30px)'};	
 		padding-right: #{'min(10%, 30px)'};
+		height: initial;
 	}
 }
