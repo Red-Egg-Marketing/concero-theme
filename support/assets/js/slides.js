@@ -68,8 +68,7 @@
 					let curSlidMin = slidePercent * (index);
 					let curSlideTotal = (100 * (index + 1) - 100);
 					let curSlidePercent = (slideTotal * progress) - curSlideTotal;
-					let id = $(slide).attr('id');
-					
+					let id = $(slide).attr('id');	
 
 					// this will test for the current slide
 					if (percent >= curSlidMin && percent <= curSlidMax) {
@@ -95,16 +94,16 @@
 						activeNav.addClass('active');
 
 						TweenMax.to(curSlide, 0, {css: { display: "flex", opacity: 1 }} );
-						TweenMax.to(otherWrap, 0.75, {css: {opacity : 0}});
-						TweenMax.to(otherSlideImg, 3.5, {css: {opacity : 0}});
-						TweenMax.to(slideImg, 1.5, {css: {opacity : 1}});
-						TweenMax.set(slideImg, { css: { marginLeft: "-" + imgPer + "px"}});
+						TweenMax.to(otherWrap, 0.75, {css: {opacity : 0}} );
+						TweenMax.to(otherSlideImg, 3.5, {css: {opacity : 0}} );
+						TweenMax.to(slideImg, 1.5, {css: {opacity : 1}} );
+						TweenMax.set(slideImg, { css: { marginLeft: "-" + imgPer + "px"}} );
 
 						if (index == 0) {
-							TweenMax.set(animateFill, {css: {width: scrimPercent + "%" }});
+							TweenMax.set(animateFill, {css: {width: scrimPercent + "%" }} );
 						} else {
-							TweenMax.set(animateFill, {css: {width: "36%" }});
-							TweenMax.to(innerWrap, 0.5, {css: {opacity: 1}});
+							TweenMax.set(animateFill, {css: {width: "36%" }} );
+							TweenMax.to(innerWrap, 0.5, {css: {opacity: 1}} );
 						}
 						
 						if (curSlidePercent >= 15) {
@@ -121,14 +120,14 @@
 						// } else if(curSlidePercent < 15) {
 						// 	TweenMax.to(innerWrap, 0.3, {css: {opacity: 0}});
 						// } 
-						TweenMax.set(otherSlides, { className: "-=active-slide"});
+						TweenMax.set(otherSlides, { className: "-=active-slide" });
 						TweenMax.set(curSlide, { className: "+=active-slide" });
 						
 
-					} else {
+					} else if (percent == 0) {
 						// otherNav.removeClass('active');
 						let allSlides = slides;
-						TweenMax.set(allSlides, { className: "-=active-slide"});
+						TweenMax.set(allSlides, { className: "-=active-slide" });
 					}
 
 				});
