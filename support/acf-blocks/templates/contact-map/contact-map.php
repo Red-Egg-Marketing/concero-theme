@@ -2,6 +2,7 @@
 
 $map = get_field('map');
 $allowed_blocks =  ['concero-custom/row', 'gravityforms/form'];
+$head = $block['data']['map_header'];
 
 $classes = ['contact-map', 'contact-map-block'];
 if( !empty( $block['className'] ) )
@@ -24,9 +25,11 @@ $template = [
 	 <div class="contact-map__inner">
 		 <div class="contact-map__content">
 		 	<div class="column column-map" <?= $anchor_map; ?>>
-		 		<h3 class="mobile-header">
-		 			<?= $block['data']['map_header']; ?>
-		 		</h3>
+		 		<?php if ($head != '') : ?>
+		 			<h3 class="mobile-header">
+		 				<?= $head; ?>
+		 			</h3>
+		 		<?php endif; ?>
 		 		<?php 
 		 			if ($map){
 		 				?>
