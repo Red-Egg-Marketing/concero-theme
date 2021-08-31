@@ -21,10 +21,17 @@
 	z-index: 2;
 }
 
+.slides .slide.active-slide:first-of-type {
+	position: relative;
+	opacity: 1;
+	z-index: 100;
+}
+
 .slides .slide:first-of-type .img-wrap,
 .slides .slide:first-of-type .text-wrap {
 	opacity: 1;
 }
+
 
 .slide .fade-wrap {
 	width: 100%;
@@ -33,16 +40,16 @@
 .slide {
 	width: 100%;
 	max-width: 100%;
-	min-height: 100vh;
 	display: flex;
 	flex-wrap: wrap;
 	align-items: flex-start;
-	position: absolute;
-	top:  0;
-	left:  0;
 	@media screen and (min-width: $small-width) {
 		align-items: stretch;
 		padding-top: 0;
+		position: absolute;
+		top:  0;
+		left:  0;
+		min-height: 100vh;
 	}
 }
 
@@ -54,7 +61,7 @@
 .slide.active-slide {
 	z-index: 100;
 	opacity: 1;
-	padding-top: 65px;
+	padding-top: 0;
 	@media screen and (min-width: $small-width) {
 		padding-top: 0;
 	}
@@ -119,6 +126,40 @@
 	}
 }
 
+.app-media {
+	opacity: 1;
+	transition-duration: 1s;
+	transition-property: opacity;
+	@media screen and (min-width: $small-width) {
+		opacity: 0;
+	}
+}
+
+.slides-wrap .slide:first-of-type .app-media {
+	@media screen and (min-width: $small-width) {
+		opacity: 1;
+	}
+}
+
+.slides-wrap.active-slides .slide:first-of-type .app-media {
+	@media screen and (min-width: $small-width) {
+		opacity: 0;
+	}
+}
+
+.slides-wrap.active-slides .slide:first-of-type .app-media.active-image {
+	@media screen and (min-width: $small-width) {
+		opacity: 1;
+	}
+}
+
+.app-media.active-image {
+	opacity: 1;
+	@media screen and (min-width: $small-width) {
+		opacity: 1;
+	}
+}
+
 .slide .text-wrap {
 	width: 100%;
 	display: flex;
@@ -126,20 +167,23 @@
 	align-items: center;
 	justify-content: center;
 	position: relative;
+	padding-bottom: 45px;
 	@media screen and (min-width: $med-width) {
 		width: 36%;
 		margin-left: 64%;
+		padding-bottom: 0;
 	}
 	@media screen and (min-width: $small-width) and (max-width: $med-width - 1px) {
 		width: 50%;
 		margin-left: 50%;
+		padding-bottom: 0;
 	}
 }
 
 .slide .text-wrap .inner-wrap {
 	background: white;
 	width: calc(100% - 80px);
-	opacity: 0;
+	opacity: 1;
 	padding-top: 30px;
 	padding-bottom: 32px;
 	padding-left: 30px;
@@ -157,6 +201,7 @@
 		margin-left: -66.5%;
 		margin-top: 0;
 		width: 110%;
+		opacity: 0;
 	}
 
 	@media screen and (min-width: $small-width) and (max-width: $med-width - 1px) {
@@ -167,6 +212,18 @@
 		margin-left: -18.5%;
 		margin-top: 0;
 		width: 110%;
+		opacity: 1;
+	}
+}
+
+.slide .text-wrap .inner-wrap.active-text {
+	transition-property: opacity;
+	transition-duration: 0.5s;
+	@media screen and (min-width: $med-width) {
+		opacity: 1;
+	}
+	@media screen and (min-width: $small-width) and (max-width: $med-width - 1px) {
+		opacity: 1;
 	}
 }
 

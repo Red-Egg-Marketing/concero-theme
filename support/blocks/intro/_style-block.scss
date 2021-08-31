@@ -85,9 +85,12 @@
 }
 
 .intro-block[data-curtain="true"] .block-wrapper {
-	position: fixed;
-	top: 0;
-	left:  0;
+	position: relative;
+	@media screen and (min-width: $small-width) {
+		position: fixed;
+		top: 0;
+		left: 0;
+	}
 }
 
 .intro-block .intro-wrap {

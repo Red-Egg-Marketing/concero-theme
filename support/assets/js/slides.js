@@ -4,14 +4,47 @@
 		var slides = $('.slides-wrap');
 		var sObject = [];
 		var win = window;
+		var winWidth = win.innerWidth;
 		var width = 768;
-		BuildSlider();
+		var created = false;
+
+		if (winWidth > width) {
+			BuildSlider();
+		}
 
 		$(document).on("click", "a[href^='#']", scrollToSlide);
 		$(window).on("resize", slideDestroyer);
+		$(window).on("resize", slideCreator);
 
 		function slideDestroyer() {
-			for (const index in sObject) {
+			if (winWidth <= width && created == true) {
+				for (const index in sObject) {
+					let scene = sObject[index].slider.scene;
+					let controller = sObject[index].slider.controller;
+					let nav = $('.slide .slides-navigation');
+					let slides = sObject[index].slider.slides;
+					nav.remove();
+
+					if (scene != null) {
+						sObject[index].slider.scene.destroy(true);
+						if (controller != null) {
+							sObject[index].slider.controller.destroy(true);
+							sObject[index].slider.controller = null;
+							sObject[index].slider.timeline.kill();
+							sObject[index].slider.timeline = null;
+						}
+						
+
+					}
+				}
+				created = false;
+			}
+		}
+
+		function slideCreator() {
+			winWidth = win.innerWidth;
+			if (winWidth > width && created == false) {
+				BuildSlider();
 			}
 		}
 
@@ -33,6 +66,7 @@
 				AppendSlideActions();
 				AppendScrollActions();
 				BuildAnchorNav();
+				created = true;
 			} else {
 				return;
 			}
@@ -54,6 +88,7 @@
 				let progress = timeline.progress();
 				let percent = progress * 100;
 				let slides = sObject[index].slider.slides;
+				let wrapper = sObject[index].slider.wrapper;
 				let total = slides.length;
 				let nav = sObject[index].slider.nav;
 				let indicator = $(nav).find('.progress-span');
@@ -63,16 +98,17 @@
 				let slideTotal = total * 100;
 				indicator.css('height', percent + '%');
 
+				console.log(wrapper);
+
 				slides.each(function(index, slide){
 					let curSlidMax = slidePercent * (index + 1);
 					let curSlidMin = slidePercent * (index);
 					let curSlideTotal = (100 * (index + 1) - 100);
 					let curSlidePercent = (slideTotal * progress) - curSlideTotal;
-					let id = $(slide).attr('id');	
+					let id = $(slide).attr('id');
 
 					// this will test for the current slide
 					if (percent >= curSlidMin && percent <= curSlidMax) {
-
 						let activeNav = $('.slide-nav[href="#' + id + '"]');
 						let otherNav = $('.slide-nav:not([href="#' + id + '"])');
 						let curSlide = slide;
@@ -93,17 +129,22 @@
 						otherNav.removeClass('active');
 						activeNav.addClass('active');
 
+						TweenMax.set(wrapper, {className: "+=active-slides"});
 						TweenMax.to(curSlide, 0, {css: { display: "flex", opacity: 1 }} );
-						TweenMax.to(otherWrap, 0.75, {css: {opacity : 0}} );
-						TweenMax.to(otherSlideImg, 3.5, {css: {opacity : 0}} );
-						TweenMax.to(slideImg, 1.5, {css: {opacity : 1}} );
+						// TweenMax.to(otherWrap, 0.75, {css: {opacity : 0}} );
+						// TweenMax.to(otherSlideImg, 3.5, {css: {opacity : 0}} );
+						// TweenMax.to(slideImg, 1.5, {css: {opacity : 1}} );
+						TweenMax.set(otherWrap, {className: "-=active-text"});
+						TweenMax.set(otherSlideImg, {className: "-=active-image"});
+						TweenMax.set(slideImg, {className: "+=active-image"});
 						TweenMax.set(slideImg, { css: { marginLeft: "-" + imgPer + "px"}} );
 
 						if (index == 0) {
 							TweenMax.set(animateFill, {css: {width: scrimPercent + "%" }} );
 						} else {
 							TweenMax.set(animateFill, {css: {width: "36%" }} );
-							TweenMax.to(innerWrap, 0.5, {css: {opacity: 1}} );
+							// TweenMax.to(innerWrap, 0.5, {css: {opacity: 1}} );
+							TweenMax.set(innerWrap, {className: "+=active-text"});
 						}
 						
 						if (curSlidePercent >= 15) {
@@ -112,14 +153,10 @@
 
 							// TweenMax.set(innerWrap, {css: {opacity: adjsOpacPerc}});
 							if (index == 0) {
-								TweenMax.to(innerWrap, 0.5, {css: {opacity: 1}});
+								// TweenMax.to(innerWrap, 0.5, {css: {opacity: 1}});
+								TweenMax.set(innerWrap, {className: "+=active-text"});
 							}
-							// TweenMax.set(slideTitle, {css: {backgroundSize: bgSize + "px 5px"}});
 						}
-
-						// } else if(curSlidePercent < 15) {
-						// 	TweenMax.to(innerWrap, 0.3, {css: {opacity: 0}});
-						// } 
 						TweenMax.set(otherSlides, { className: "-=active-slide" });
 						TweenMax.set(curSlide, { className: "+=active-slide" });
 						
@@ -128,6 +165,7 @@
 						// otherNav.removeClass('active');
 						let allSlides = slides;
 						TweenMax.set(allSlides, { className: "-=active-slide" });
+						TweenMax.set(wrapper, {className: "-=active-slides"});
 					}
 
 				});
@@ -162,6 +200,7 @@
 					innerWrap.append($navW);
 					sObject[index].slider.nav = $navW;
 				}
+
 			}
 		}
 
