@@ -11,6 +11,7 @@
 $logo_id = get_theme_mod( 'custom_logo' );
 $logo = wp_get_attachment_image( $logo_id , 'full' );
 $home = get_permalink(get_option('page_on_front'));
+$logo_link = '<a href="' . $home . '#page">' . $logo . '</a>';
 
 $contact = '<a href="' . $home . '#contact-block-content" class="nav-logo"><img src="' . get_template_directory_uri() . '/img/letter.svg" /></a>';
 $map = '<a href="' . $home . '#contact-block-map" class="nav-logo"><img src="' . get_template_directory_uri() . '/img/map.svg" /></a>';
@@ -38,7 +39,7 @@ $map = '<a href="' . $home . '#contact-block-map" class="nav-logo"><img src="' .
 				echo $contact;
 
 				if ($logo != '') {
-					echo $logo;
+					echo $logo_link;
 				}
 
 				echo $map;
