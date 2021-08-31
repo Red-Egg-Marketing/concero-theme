@@ -147,6 +147,8 @@
 	margin-top: -75px;
 	max-height: 100vh;
 	overflow-y: auto;
+	position: relative;
+	z-index: 2;
 	@media screen and (min-width: $med-width) {
 		padding-top: 70px;
 		padding-bottom: 70px;
