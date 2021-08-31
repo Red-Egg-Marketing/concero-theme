@@ -50,6 +50,7 @@ div.gform_wrapper.gravity-theme .gfield_checkbox label {
 	cursor: pointer;
 	font-family: $font-body-light;
 	color: $head-color;
+	text-shadow: 1px 1px transparent;
 	@media screen and (min-width: $small-width) {
 		font-size: 19px;
 		line-height: 25px;
@@ -108,12 +109,12 @@ div.gform_wrapper.gravity-theme .gform_footer {
 	padding-bottom: 0;
 	transition-duration: 0.3s;
 	transition-property: color, background;
-	font-weight: 400;
 	font-size: 11pt;
 	padding-top: 18px;
 	padding-bottom: 8px;
 	letter-spacing: 0.55pt;
 	min-height: 35px;
+	text-shadow: 1px 1px transparent;
 	@media screen and (min-width: $small-width) {
 		font-size: 15px;
 		line-height: 1.15;
@@ -180,25 +181,25 @@ div.gform_wrapper input.gfield-choice-input:checked + label:after {
 
 .gform_wrapper ::placeholder {
 	font-family: $font-body-light;
-	font-weight: normal;
 	color: $head-color;
 	font-size: 15px;
 	line-height: 20px;
 	letter-spacing: 0.14px;
+	text-shadow: 1px 1px transparent;
 	@media screen and (min-width: $small-width) {
 		font-size: 19px;
-		line-height: 20px;
+		line-height: 30px;
 		letter-spacing: 0.19px;
 	}
 }
 
 .gform_wrapper ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   	font-family: $font-body-light;
-  	font-weight: normal;
 	color: $head-color;
 	font-size: 15px;
 	line-height: 20px;
 	letter-spacing: 0.14px;
+	text-shadow: 1px 1px transparent;
 	@media screen and (min-width: $small-width) {
 		font-size: 19px;
 		line-height: 30px;
@@ -207,11 +208,11 @@ div.gform_wrapper input.gfield-choice-input:checked + label:after {
 }
 .gform_wrapper ::-moz-placeholder { /* Firefox 19+ */
   	font-family: $font-body-light;
-  	font-weight: normal;
 	color: $head-color;
 	font-size: 15px;
 	line-height: 20px;
 	letter-spacing: 0.14px;
+	text-shadow: 1px 1px transparent;
 	@media screen and (min-width: $small-width) {
 		font-size: 19px;
 		line-height: 30px;
@@ -220,11 +221,11 @@ div.gform_wrapper input.gfield-choice-input:checked + label:after {
 }
 .gform_wrapper :-ms-input-placeholder { /* IE 10+ */
   	font-family: $font-body-light;
-  	font-weight: normal;
 	color: $head-color;
 	font-size: 15px;
 	line-height: 20px;
 	letter-spacing: 0.14px;
+	text-shadow: 1px 1px transparent;
 	@media screen and (min-width: $small-width) {
 		font-size: 19px;
 		line-height: 30px;
@@ -233,11 +234,11 @@ div.gform_wrapper input.gfield-choice-input:checked + label:after {
 }
 .gform_wrapper :-moz-placeholder { /* Firefox 18- */
   	font-family: $font-body-light;
-  	font-weight: normal;
 	color: $head-color;
 	font-size: 15px;
 	line-height: 20px;
 	letter-spacing: 0.14px;
+	text-shadow: 1px 1px transparent;
 	@media screen and (min-width: $small-width) {
 		font-size: 19px;
 		line-height: 30px;
