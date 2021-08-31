@@ -45,19 +45,17 @@
 	font-weight: 700;
 	font-size: 21px;
 	margin-top: 55px;
+	opacity: 0;
 	@media screen and (min-width: $small-width) {
 		font-size: 25px;
 		line-height: 42px;
 		margin-top: 52px;
 		margin-bottom: 28px;
-		opacity: 0;
 	}
 }
 
 .intro-block .block-body {
-	@media screen and (min-width: $small-width) {
-		opacity: 0;
-	}
+	opacity: 0;
 }
 
 .intro-block .block-body p {
