@@ -127,6 +127,8 @@
 
 					} else {
 						// otherNav.removeClass('active');
+						let allSlides = slides;
+						TweenMax.set(allSlides, { className: "-=active-slide"});
 					}
 
 				});
