@@ -3,7 +3,7 @@
 	function ActivateIntro() {
 		let intros = $('.intro-block');
 		let iObject = [];
-		let logoTime = 4.125;
+		let logoTime = 3.55;
 
 		BuildIntro();
 
@@ -47,12 +47,9 @@
 				// animation.to(heading, 1, {opacity: 1});
 				animation.to(img, 1.125, { opacity: 1 })
 				animation.addLabel("logoFade", "+=" + logoTime)
-				// animation.set(parent, {className : "+=active"});
-
-				// set animations outside of main timeline
-				TweenMax.set(heading, {opacity: alterScrollProg});
-				TweenMax.set(body, {opacity: alterScrollProgBody});
-				TweenMax.set(img, {css: {backgroundSize: bgSize + "px 5px"}});
+				animation.to(img, 0.5125, {css: {backgroundSize: "50px 5px" }}, "logoFade");
+				animation.to(heading, 1.25, {opacity: 1}, "logoFade+=0.125")
+				animation.to(body, 1.35, {opacity: 1}, "logoFade+=0.135");
 
 				if (progress == 1) {
 					TweenMax.set(parent, {className: "-=active"});
