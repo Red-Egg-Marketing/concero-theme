@@ -40,6 +40,14 @@ div.gform_wrapper.gravity-theme input:not([type=radio]):not([type=checkbox]):not
 	}
 }
 
+#gform_confirmation_message_1 {
+	text-align: center;
+	color: white;
+	font-size: 22px;
+	font-family: $font-body-light;
+	padding-top: 0;
+	padding-bottom: 30px;
+}
 div.gform_wrapper .gfield_checkbox .gchoice {
 	position: relative;
 	padding-left: 30px;
