@@ -28,7 +28,7 @@
 		}
 
 		function checkTimelineProgress() {
-			for (const index in iObject) {
+			for (var index in iObject) {
 				let intro = iObject[index].intro;
 				let timeline = iObject[index].intro.timeline;
 				let progress = timeline.progress();
@@ -63,7 +63,7 @@
 		}
 
 		function AddIntroActions() {
-			for (const index in iObject) {
+			for (var index in iObject) {
 				let intro = iObject[index].intro;
 				let controller = intro.controller;
 				let wrapper = intro.wrapper;

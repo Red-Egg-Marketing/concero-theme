@@ -18,7 +18,7 @@
 
 		function slideDestroyer() {
 			if (winWidth <= width && created == true) {
-				for (const index in sObject) {
+				for (var index in sObject) {
 					let scene = sObject[index].slider.scene;
 					let controller = sObject[index].slider.controller;
 					let nav = $('.slide .slides-navigation');
@@ -83,7 +83,7 @@
 
 		function checkTimelineProgress() {
 		
-			for (const index in sObject) {
+			for (var index in sObject) {
 				let timeline = sObject[index].slider.timeline;
 				let progress = timeline.progress();
 				let percent = progress * 100;
@@ -97,8 +97,6 @@
 				let slidePercent = 100/total;
 				let slideTotal = total * 100;
 				indicator.css('height', percent + '%');
-
-				console.log(wrapper);
 
 				slides.each(function(index, slide){
 					let curSlidMax = slidePercent * (index + 1);
@@ -118,7 +116,9 @@
 						let innerWrap = $(curSlide).find('.inner-wrap');
 						let slideTitle = $(curSlide).find('.slide-title');
 						let otherSlides = slides.filter((key, element) => {
-							return index != key;
+							if (index != key) {
+								return;
+							}
 						});
 						let animateFill = $(curSlide).find('.animate-fill');
 						let scrimPercent = 36 * (curSlidePercent/100);
@@ -151,9 +151,7 @@
 							let adjsOpacPerc = (curSlidePercent - 15)/85;
 							let bgSize = adjsOpacPerc * 50;
 
-							// TweenMax.set(innerWrap, {css: {opacity: adjsOpacPerc}});
 							if (index == 0) {
-								// TweenMax.to(innerWrap, 0.5, {css: {opacity: 1}});
 								TweenMax.set(innerWrap, {className: "+=active-text"});
 							}
 						}
@@ -174,7 +172,7 @@
 
 
 		function BuildAnchorNav() {
-			for (const index in sObject) {
+			for (var index in sObject) {
 				let slides = sObject[index].slider.slides;
 				let id = sObject[index].slider.slideId;
 				let wrapper = sObject[index].slider.wrapper;
@@ -207,7 +205,7 @@
 
 		function AppendScrollActions() {
 			
-			for (const index in sObject) {
+			for (var index in sObject) {
 				let id = sObject[index].slider.slideId;
 				let wrapper = sObject[index].slider.wrapper;
 				let par = wrapper.closest('.block-wrapper');
@@ -249,7 +247,7 @@
 
 		function AppendSlideActions() {
 
-			for (const index in sObject) {
+			for (var index in sObject) {
 				let id = sObject[index].slider.slideId;
 				sObject[index].slider.wrapper = $('#' + id);
 				sObject[index].slider.slides = sObject[index].slider.wrapper.find('.slide');
@@ -279,7 +277,7 @@
 		}
 
 		function ActivateTimeline() {
-			for (const index in sObject) {
+			for (var index in sObject) {
 				sObject[index].slider.timeline = new TimelineMax();
 				sObject[index].slider.controller = new ScrollMagic.Controller();
 			}

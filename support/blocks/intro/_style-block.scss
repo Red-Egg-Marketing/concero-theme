@@ -37,7 +37,15 @@
 	transition-property: opacity;
 }
 
+body.ie .intro-block:after {
+	opacity: 1;
+}
+
 .intro-block.active:after {
+	opacity: 1;
+}
+
+body.ie .intro-block .block-header {
 	opacity: 1;
 }
 
@@ -54,6 +62,10 @@
 		margin-top: 52px;
 		margin-bottom: 28px;
 	}
+}
+
+body.ie .intro-block .block-body {
+	opacity: 1;
 }
 
 .intro-block .block-body {
@@ -101,8 +113,6 @@
 
 .intro-block .intro-wrap {
 	max-width: 830px;
-	margin-left: auto;
-	margin-right: auto;
 	text-align: center;
 	color: white;
 }
@@ -110,7 +120,7 @@
 .intro-block .image-wrap {
 	max-width: 425px;
 	margin: 0 auto;
-	opacity: 0;
+	// opacity: 0;
 	background-image: linear-gradient(to right, $head-alt-color, $head-alt-color);
 	background-size: 0px 5px;
 	padding-bottom: 35px;

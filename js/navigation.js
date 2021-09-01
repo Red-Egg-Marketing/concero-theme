@@ -5,8 +5,8 @@
  * navigation support for dropdown menus.
  */
 ( function() {
-	const siteNavigation = document.getElementById( 'site-navigation' );
-	const siteHeader = document.getElementById( 'masthead' );
+	var siteNavigation = document.getElementById( 'site-navigation' );
+	var siteHeader = document.getElementById( 'masthead' );
 	var scrollY = window.scrollY;
 
 	if (siteHeader) {
@@ -26,14 +26,14 @@
 		return;
 	}
 
-	const button = siteNavigation.getElementsByTagName( 'button' )[ 0 ];
+	var button = siteNavigation.getElementsByTagName( 'button' )[ 0 ];
 
 	// Return early if the button don't exist.
 	if ( 'undefined' === typeof button ) {
 		return;
 	}
 
-	const menu = siteNavigation.getElementsByTagName( 'ul' )[ 0 ];
+	var menu = siteNavigation.getElementsByTagName( 'ul' )[ 0 ];
 
 	// Hide menu toggle button if menu is empty and return early.
 	if ( 'undefined' === typeof menu ) {
@@ -58,7 +58,7 @@
 
 	// Remove the .toggled class and set aria-expanded to false when the user clicks outside the navigation.
 	document.addEventListener( 'click', function( event ) {
-		const isClickInside = siteNavigation.contains( event.target );
+		var isClickInside = siteNavigation.contains( event.target );
 
 		if ( ! isClickInside ) {
 			siteNavigation.classList.remove( 'toggled' );
@@ -67,19 +67,19 @@
 	} );
 
 	// Get all the link elements within the menu.
-	const links = menu.getElementsByTagName( 'a' );
+	var links = menu.getElementsByTagName( 'a' );
 
 	// Get all the link elements with children within the menu.
-	const linksWithChildren = menu.querySelectorAll( '.menu-item-has-children > a, .page_item_has_children > a' );
+	var linksWithChildren = menu.querySelectorAll( '.menu-item-has-children > a, .page_item_has_children > a' );
 
 	// Toggle focus each time a menu link is focused or blurred.
-	for ( const link of links ) {
+	for ( var link of links ) {
 		link.addEventListener( 'focus', toggleFocus, true );
 		link.addEventListener( 'blur', toggleFocus, true );
 	}
 
 	// Toggle focus each time a menu link with children receive a touch event.
-	for ( const link of linksWithChildren ) {
+	for ( var link of linksWithChildren ) {
 		link.addEventListener( 'touchstart', toggleFocus, false );
 	}
 
@@ -100,9 +100,9 @@
 		}
 
 		if ( event.type === 'touchstart' ) {
-			const menuItem = this.parentNode;
+			var menuItem = this.parentNode;
 			event.preventDefault();
-			for ( const link of menuItem.parentNode.children ) {
+			for ( var link of menuItem.parentNode.children ) {
 				if ( menuItem !== link ) {
 					link.classList.remove( 'focus' );
 				}
