@@ -116,9 +116,7 @@
 						let innerWrap = $(curSlide).find('.inner-wrap');
 						let slideTitle = $(curSlide).find('.slide-title');
 						let otherSlides = slides.filter((key, element) => {
-							if (index != key) {
-								return;
-							}
+							return index != key;
 						});
 						let animateFill = $(curSlide).find('.animate-fill');
 						let scrimPercent = 36 * (curSlidePercent/100);
