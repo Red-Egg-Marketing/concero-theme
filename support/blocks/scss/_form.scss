@@ -24,11 +24,11 @@ div.gform_wrapper.gravity-theme textarea {
 	color: $head-color;
 	padding-bottom: 0;
 	padding-left: 0;
-	text-shadow: 1px 1px transparent;
 	font-size: 16px;
 	line-height: 20px;
 	@media screen and (min-width: $small-width) {
 		font-size: 19px;
+		line-height: 24px;
 		letter-spacing: 0.19px;
 		margin-bottom: 6px;
 	}
@@ -53,7 +53,6 @@ div.gform_wrapper.gravity-theme .gfield_checkbox label {
 	cursor: pointer;
 	font-family: $font-body-light;
 	color: $head-color;
-	text-shadow: 1px 1px transparent;
 	@media screen and (min-width: $small-width) {
 		font-size: 19px;
 		line-height: 25px;
@@ -115,9 +114,8 @@ div.gform_wrapper.gravity-theme .gform_footer {
 	font-size: 11pt;
 	padding-top: 18px;
 	padding-bottom: 8px;
-	letter-spacing: 0.55pt;
+	letter-spacing: 0.55px;
 	min-height: 35px;
-	text-shadow: 1px 1px transparent;
 	@media screen and (min-width: $small-width) {
 		font-size: 15px;
 		line-height: 1.15;
@@ -188,7 +186,6 @@ div.gform_wrapper input.gfield-choice-input:checked + label:after {
 	font-size: 16px;
 	line-height: 20px;
 	letter-spacing: 0.14px;
-	text-shadow: 1px 1px transparent;
 	@media screen and (min-width: $small-width) {
 		font-size: 19px;
 		line-height: 30px;
@@ -202,7 +199,6 @@ div.gform_wrapper input.gfield-choice-input:checked + label:after {
 	font-size: 16px;
 	line-height: 20px;
 	letter-spacing: 0.14px;
-	text-shadow: 1px 1px transparent;
 	@media screen and (min-width: $small-width) {
 		font-size: 19px;
 		line-height: 30px;
@@ -215,7 +211,6 @@ div.gform_wrapper input.gfield-choice-input:checked + label:after {
 	font-size: 16px;
 	line-height: 20px;
 	letter-spacing: 0.14px;
-	text-shadow: 1px 1px transparent;
 	@media screen and (min-width: $small-width) {
 		font-size: 19px;
 		line-height: 30px;
@@ -228,7 +223,6 @@ div.gform_wrapper input.gfield-choice-input:checked + label:after {
 	font-size: 16px;
 	line-height: 20px;
 	letter-spacing: 0.14px;
-	text-shadow: 1px 1px transparent;
 	@media screen and (min-width: $small-width) {
 		font-size: 19px;
 		line-height: 30px;
@@ -241,7 +235,6 @@ div.gform_wrapper input.gfield-choice-input:checked + label:after {
 	font-size: 16px;
 	line-height: 20px;
 	letter-spacing: 0.14px;
-	text-shadow: 1px 1px transparent;
 	@media screen and (min-width: $small-width) {
 		font-size: 19px;
 		line-height: 30px;
