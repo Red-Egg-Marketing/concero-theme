@@ -112,15 +112,15 @@ div.gform_wrapper.gravity-theme .gform_footer {
 	transition-duration: 0.3s;
 	transition-property: color, background;
 	font-size: 11pt;
-	padding-top: 18px;
-	padding-bottom: 8px;
+	padding-top: 12px;
+	padding-bottom: 10px;
 	letter-spacing: 0.55px;
 	min-height: 35px;
 	@media screen and (min-width: $small-width) {
 		font-size: 15px;
 		line-height: 1.15;
 		letter-spacing: 1.25px;
-		padding-top: 10px;
+		padding-top: 12px;
 		padding-bottom:10px;
 		padding-left: 25px;
 		padding-right: 25px;
@@ -128,7 +128,7 @@ div.gform_wrapper.gravity-theme .gform_footer {
 	}
 	@media only screen and (max-width: 641px) {
 		font-size: 11pt;
-		padding-top: 10px;
+		padding-top: 12px;
 		padding-bottom: 10px;
 		letter-spacing: 0.55pt;
 		min-height: 35px;
