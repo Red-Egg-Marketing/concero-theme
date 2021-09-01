@@ -5,10 +5,10 @@
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: center;
-	height: 100vh;
+	min-height: 100vh;
 	position: relative;
 	@media screen and (min-width: $small-width) {
-		min-height: 1080px;
+		min-height: 100vh;
 	}
 
 }
@@ -91,6 +91,7 @@ body.ie .intro-block .block-body {
 .intro-block .block-wrapper {
 	width: 100%;
 	height: 100%;
+	min-height: 100vh;
 	display: flex;
 	flex-wrap: wrap;
 	align-items: flex-start;
@@ -104,8 +105,8 @@ body.ie .intro-block .block-body {
 
 .intro-block[data-curtain="true"] .block-wrapper {
 	position: relative;
+	background-attachment: fixed;
 	@media screen and (min-width: $small-width) {
-		position: fixed;
 		top: 0;
 		left: 0;
 	}
@@ -115,6 +116,7 @@ body.ie .intro-block .block-body {
 	max-width: 830px;
 	text-align: center;
 	color: white;
+	margin-bottom: 15px;
 }
 
 .intro-block .image-wrap {
