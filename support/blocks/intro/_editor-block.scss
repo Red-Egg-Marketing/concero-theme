@@ -32,3 +32,11 @@
 	height: auto;
 	width: 100%;
 }
+.intro-block .image-wrap img.block-image {
+	width: 40%;
+	margin: 0 auto 5%;
+	@media screen and (min-width: $small-width) {
+		width: 40%;
+		margin: 0 auto 7.5%;
+	}
+}
