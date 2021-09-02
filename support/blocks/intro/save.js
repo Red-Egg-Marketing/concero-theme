@@ -31,12 +31,20 @@ const SaveIntro = ( { attributes } ) => {
 				style={ styleBlock }	
 				>
 				<div className="intro-wrap">
-					{ settings.image != '' && (
+					{ (settings.image != '' || settings.logoImage != '') && (
 						<div className="image-wrap">
-							<img
-								className="block-image"
-								src={ settings.image }
-							/>
+							{ settings.image != '' && (
+								<img
+									className="block-image"
+									src={ settings.image }
+								/>
+							)}
+							{ settings.logoImage != '' && (
+								<img
+									className="block-logo-image"
+									src={ settings.logoImage }
+								/>
+							)}
 						</div>
 					)}
 					<RichText.Content

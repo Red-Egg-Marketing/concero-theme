@@ -108,11 +108,42 @@ const EditIntro = ( { attributes, setAttributes, isSelected, clientId } ) => {
 
     }
 
+    const onSelectLogo = (media) => {
+
+     	let newBody = JSON.parse(JSON.stringify(settings));
+    	let mediaSrc;
+        if (media.subtype == 'svg+xml') {
+        	mediaSrc = media.url;
+        } else {
+           mediaSrc = media.url;
+        }
+        newBody.logoId = media.id;
+        newBody.logoImage = media.url;
+
+        setAttributes({
+         	settings: newBody
+        });
+
+    }
+
     const removeImage = () => {
 
     	let newBody = JSON.parse(JSON.stringify(settings));
     	newBody.image = '';
     	newBody.imageId = '';
+
+    	setAttributes({
+    		settings: newBody
+    	});
+
+    }
+
+
+    const removeLogo = () => {
+
+    	let newBody = JSON.parse(JSON.stringify(settings));
+    	newBody.logoImage = '';
+    	newBody.logoId = '';
 
     	setAttributes({
     		settings: newBody
@@ -308,14 +339,6 @@ const EditIntro = ( { attributes, setAttributes, isSelected, clientId } ) => {
 				>
 				<div className="block-wrapper" style={ styleBlock }>
 					<div className="intro-wrap">
-						{ settings.image != '' && (
-							<div className="image-wrap">
-								<img
-									className="block-image"
-									src={ settings.image }
-								/>
-							</div>
-						)}
 						<MediaUpload
 							allowedTypes={ ['image'] }
 							onSelect={ onSelectImage }
@@ -346,6 +369,59 @@ const EditIntro = ( { attributes, setAttributes, isSelected, clientId } ) => {
 											style={ butStyle }
 										>
 											Remove Image
+										</Button>
+									)}
+								</div>	
+							)}
+						/>
+						{ (settings.image != '' || settings.logoImage != '') && (
+							<div className="image-wrap">
+								{ settings.image != '' && (
+									<img
+										className="block-image"
+										src={ settings.image }
+									/>
+								)}
+
+								{ settings.logoImage != '' && (
+									<img
+										className="block-logo-image"
+										src={ settings.logoImage }
+									/>
+								)}
+							</div>
+						)}
+						
+						<MediaUpload
+							allowedTypes={ ['image'] }
+							onSelect={ onSelectLogo }
+							value={ settings.logoId }
+							render={ ( {open} ) =>(
+								<div 
+									className="image-controls"
+									style={
+                        	    		{
+                        	    			'background' : 'rgba(255, 255, 255, 0.7)',
+                        	    			'display' : 'inline-block',
+                        	    			'padding' : '5px',
+                        	    			'margin-top' : '10px'
+                        	    		}
+                        	    	}
+								>
+									<Button
+										isSecondary
+										onClick={ open }
+										style={ butStyle }
+									>
+										{ butText } Logo Image
+									</Button>
+									{ settings.logoImage != '' && (
+										<Button
+											isDestructive
+											onClick={ removeLogo }
+											style={ butStyle }
+										>
+											Remove Logo Image
 										</Button>
 									)}
 								</div>	

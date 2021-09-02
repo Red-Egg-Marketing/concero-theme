@@ -21,13 +21,15 @@ registerBlockType( 'concero-custom/intro', {
 				title: '',
 				body: '',
 				image: '',
+				logoImage: '',
 				backgroundColor: '#000000',
 				backgroundImage: '',
 				backgroundWidth: '',
 				backgroundHeight: '',
 				backgroundRepeat: '',
 				backgroundSize: 100,
-				imageId: ''
+				imageId: '',
+				logoId: ''
 			}
 		}
 	},
