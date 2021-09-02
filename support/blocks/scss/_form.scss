@@ -160,7 +160,7 @@ div.gform_wrapper .gfield:last-child {
 div.gform_wrapper input.gfield-choice-input + label:before {
 	content: "";
 	position: absolute;
-	top: -5px;
+	top: 0;
 	left: 0;
 	width: 22px;
 	height: 22px;
@@ -175,7 +175,7 @@ div.gform_wrapper input.gfield-choice-input + label:before {
 div.gform_wrapper input.gfield-choice-input:checked + label:after {
 	content: "";
 	position: absolute;
-	top: -5px;
+	top: 0;
 	left: 0;
 	width: 22px;
 	height: 22px;
