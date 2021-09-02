@@ -159,6 +159,10 @@ body.ie .app-media {
 	}
 }
 
+.slides-wrap:not(.active-slides) .slide:first-of-type {
+	z-index: 999;
+}
+
 .slides-wrap.active-slides .slide:first-of-type .app-media {
 	@media screen and (min-width: $small-width + 1px) {
 		opacity: 0;

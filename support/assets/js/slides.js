@@ -50,6 +50,7 @@
 
 		function scrollToSlide() {
 			event.preventDefault();
+
 			let id = $(this).attr("href");
 			let navId = $(this).attr("id");
 			id = id.replace('#', '');
@@ -236,7 +237,7 @@
 				sObject[index].slider.scene.on("progress", checkTimelineProgress);
 
 				controller.scrollTo(function (newpos) {
-    				TweenMax.to(window, .35, {scrollTo: {y: newpos}, ease:Power1.easeInOut});
+    				TweenMax.to(window, .35, {scrollTo: {y: newpos, autoKill: false}});
 				});
 
 			}
@@ -301,6 +302,7 @@
 				let timeline = sObject[i].slider.timeline;
 				let par = $(slides).closest('.slides');
 				let parOffset = $(par)[0].offsetTop;
+
         		for (var z = 0; z < slides.length; z++) {
         			let sId = slides[z].id;
         			let height = $(slides[z]).outerHeight();
