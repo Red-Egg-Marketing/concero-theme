@@ -3,7 +3,7 @@
 	function ActivateIntro() {
 		let intros = $('.intro-block');
 		let iObject = [];
-		let logoTime = 3.55;
+		let logoTime = 1.45;
 
 		BuildIntro();
 
@@ -40,6 +40,7 @@
 				let heading = wrapper.find('.block-heading');
 				let body = wrapper.find('.block-body');
 				let img = wrapper.find('.image-wrap');
+				let logo = wrapper.find('.block-logo-image');
 				let alterScrollProg = (progress * 1.35) <= 1 ? progress * 1.35 : 1;
 				let alterScrollProgBody = (progress * 1.15) <= 1 ? progress * 1.15 : 1;
 				let bgSize = progress * 50;
@@ -47,7 +48,8 @@
 				// animation.to(heading, 1, {opacity: 1});
 				animation.to(img, 1.125, { opacity: 1 })
 				animation.addLabel("logoFade", "+=" + logoTime)
-				animation.to(img, 0.5125, {css: {backgroundSize: "50px 5px" }}, "logoFade");
+				animation.to(logo, 0.625, {opacity: 1}, "logoFade");
+				animation.to(img, 0.625, {css: {backgroundSize: "50px 5px" }}, "logoFade+=0.0125");
 				animation.to(heading, 1.25, {opacity: 1}, "logoFade+=0.125")
 				animation.to(body, 1.35, {opacity: 1}, "logoFade+=0.135");
 
