@@ -120,10 +120,19 @@ var stylesArray = [
     },
     {
         "featureType": "road.local",
+        "elementType": "labels",
+        "stylers" : [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "road.local",
         "elementType": "geometry",
         "stylers": [
             {
-                "color": "#8eaec3"
+                "color": "#c6d8e2"
             },
             {
                 "lightness": 16
