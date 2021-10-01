@@ -23,8 +23,9 @@ const EditSlide = ( { attributes, setAttributes, isSelected } ) => {
         if (media.subtype == 'svg+xml') {
         	mediaSrc = media.url;
         } else {
-           mediaSrc = media.sizes['slide-image-reg'] != undefined ? media.sizes['slide-image-reg'].url : media.sizes['full'].url;
-           srcSet = media.sizes['slide-image-small'].url + ' 960w';
+           mediaSrc = media.sizes['slide-image-large'] != undefined ? media.sizes['slide-image-large'].url : media.sizes['full'].url;
+           srcSet = media.sizes['slide-image-reg'].url + ' 1400w';
+           srcSet += ', ' + media.sizes['slide-image-small'].url + ' 960w';
            srcSet += ', ' + media.sizes['slide-image-xs'].url + ' 480w';
            srcSet += ', ' + mediaSrc + ' 1920w';
         }
