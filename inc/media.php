@@ -18,7 +18,7 @@ function concero_mime_types($mimes) {
 add_filter('upload_mimes', 'concero_mime_types');
 
 
-add_image_size('slide-image-large', 2880, 1620, array('center', 'center'), false);
+add_image_size('slide-image-large', 2880, 1620, array('center', 'center'), true);
 add_image_size('slide-image-reg', 1920, 1080, array('center', 'center'), false);
 add_image_size('slide-image-small', 540, 540, array('center', 'center'), false);
 add_image_size('slide-image-xs', 270, 270, array('center', 'center'), false);
@@ -33,3 +33,7 @@ function concero_custom_sizes( $sizes ) {
         'slide-image-xs' => ('Slide Image Extra Small'),
     ) );
 }
+
+// remove big image threshold
+
+add_filter( 'big_image_size_threshold', '__return_false' );
